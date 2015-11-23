@@ -1,0 +1,58 @@
+mysql> CREATE TABLE Account ( id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, firstname VARCHAR(30) NOT NULL, lastname VARCHAR(30) NOT NULL, email VARCHAR(50));Query OK, 0 rows affected (0.01 sec)
+
+mysql> describe Account;
++-----------+-----------------+------+-----+---------+----------------+
+| Field     | Type            | Null | Key | Default | Extra          |
++-----------+-----------------+------+-----+---------+----------------+
+| id        | int(6) unsigned | NO   | PRI | NULL    | auto_increment |
+| firstname | varchar(30)     | NO   |     | NULL    |                |
+| lastname  | varchar(30)     | NO   |     | NULL    |                |
+| email     | varchar(50)     | YES  |     | NULL    |                |
++-----------+-----------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+
+mysql> CREATE TABLE AddressBook ( id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, firstname VARCHAR(30) NOT NULL, lastname VARCHAR(30) NOT NULL, birthdate VARCHAR(20));      
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> describe AddressBook;
++-----------+-----------------+------+-----+---------+----------------+
+| Field     | Type            | Null | Key | Default | Extra          |
++-----------+-----------------+------+-----+---------+----------------+
+| id        | int(6) unsigned | NO   | PRI | NULL    | auto_increment |
+| firstname | varchar(30)     | NO   |     | NULL    |                |
+| lastname  | varchar(30)     | NO   |     | NULL    |                |
+| birthdate | varchar(20)     | YES  |     | NULL    |                |
++-----------+-----------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> CREATE TABLE Entry ( id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, firstname VARCHAR(30) NOT NULL, lastname VARCHAR(30) NOT NULL, birthdate VARCHAR(20), address VARCHAR(100), phone VARCHAR(30), email VARCHAR(50));                                                                                                                             
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> describe Entry;                                                                                                                                                       +-----------+-----------------+------+-----+---------+----------------+
+| Field     | Type            | Null | Key | Default | Extra          |
++-----------+-----------------+------+-----+---------+----------------+
+| id        | int(6) unsigned | NO   | PRI | NULL    | auto_increment |
+| firstname | varchar(30)     | NO   |     | NULL    |                |
+| lastname  | varchar(30)     | NO   |     | NULL    |                |
+| birthdate | varchar(20)     | YES  |     | NULL    |                |
+| address   | varchar(100)    | YES  |     | NULL    |                |
+| phone     | varchar(30)     | YES  |     | NULL    |                |
+| email     | varchar(50)     | YES  |     | NULL    |                |
++-----------+-----------------+------+-----+---------+----------------+
+7 rows in set (0.00 sec)
+
+
+mysql> CREATE TABLE Test ( id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, test1 int, test2 int, test3 int);                                    
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> describe Test;
++-------+-----------------+------+-----+---------+----------------+
+| Field | Type            | Null | Key | Default | Extra          |
++-------+-----------------+------+-----+---------+----------------+
+| id    | int(6) unsigned | NO   | PRI | NULL    | auto_increment |
+| test1 | int(11)         | YES  |     | NULL    |                |
+| test2 | int(11)         | YES  |     | NULL    |                |
+| test3 | int(11)         | YES  |     | NULL    |                |
++-------+-----------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
