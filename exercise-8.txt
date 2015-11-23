@@ -1,0 +1,25 @@
+mysql> CREATE TABLE Account( Account_Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, userName VARCHAR(20) NOT NULL, password CHAR(20) NOT NULL );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> CREATE TABLE Entry(  Entry_Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,  firstName VARCHAR(20) NOT NULL,  lastName VARCHAR(20) NOT NULL,  Account_Id INT,  FOREIGN KEY (Account_Id) REFERENCES Account(Account_Id)  );
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> CREATE TABLE Address (  Address_Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,  line1 VARCHAR(50) NOT NULL,  line2 VARCHAR(50),  city VARCHAR(20),  state VARCHAR(20),  zip VARCHAR(20),  type ENUM('home', 'work', 'other'), Entry_Id INT, FOREIGN KEY (Entry_Id) REFERENCES Entry(Entry_Id)  );                                                     
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> CREATE TABLE Email(  Email_Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,  type  ENUM('home', 'work', 'other'),  address VARCHAR(50), Entry_Id INT, FOREIGN KEY (Entry_Id) REFERENCES Entry(Entry_Id)  );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> CREATE TABLE Phone(  Phone_Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,  type  ENUM('home', 'work', 'other'),  kind ENUM('cell', 'land', 'fax'),  number VARCHAR(9), Entry_Id INT, FOREIGN KEY (Entry_Id) REFERENCES Entry(Entry_Id)  );                                                                                                            
+Query OK, 0 rows affected (0.00 sec)
+mysql> show tables;
++---------------------------------+
+| Tables_in_decodemtl_addressbook |
++---------------------------------+
+| Account                         |
+| Address                         |
+| Email                           |
+| Entry                           |
+| Phone                           |
++---------------------------------+
+5 rows in set (0.00 sec)
